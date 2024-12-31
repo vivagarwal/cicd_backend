@@ -28,6 +28,10 @@ app.post("/hello", (req, res) => {
     res.status(200).json({ message: `Hello, ${name}! How are you ?` });
 });
 
+app.get("/", (req, res) => {
+    res.status(200).json({ message: `Welcome to CI/CD Integration` });
+});
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
