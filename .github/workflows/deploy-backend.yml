@@ -22,7 +22,7 @@ jobs:
     - name: Build and push Docker image
       run: |
             docker build -t cicibackend:latest .
-            docker push cicibackend:latest
+            docker push docker.io/***/cicibackend:latest
 
     - name: SSH and deploy to EC2
       uses: appleboy/ssh-action@v0.1.5
@@ -34,4 +34,4 @@ jobs:
           docker pull cicibackend:latest
           docker stop backend || true
           docker rm backend || true
-          docker run -d -p 8080:8080 --name backend cicibackend:latest
+          docker run -d -p 8080:8080 --name backend docker.io/***/cicibackend:latest
