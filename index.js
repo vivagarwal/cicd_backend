@@ -25,7 +25,7 @@ app.post("/hello", (req, res) => {
     if (!name) {
       return res.status(400).json({ error: "Name is required" });
     }
-    res.status(200).json({ message: `Hello, ${name}!` });
+    res.status(200).json({ message: `Hello, ${name}! How are you ?` });
 });
 
 app.listen(PORT, () => {
